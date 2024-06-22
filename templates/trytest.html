@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-T Detection</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <style>
+        /* / */
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #66fcf1, #245755);
+            color: #354046;
+        }
+
+        section {
+            width: 100%;
+            max-width: 600px;
+            background-color: linear-gradient(to right, #3498db, #6c5b7b);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform-origin: center;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        input[type="file"] {
+            display: none;
+            background-color: #287083;
+            /* Light gray background color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        label {
+            background-color: #2471a3;
+            color: #fffcfc;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        label:hover {
+            background-color: #354046;
+            transform: scale(1.05);
+        }
+
+        #test-button {
+            background-color: #27ae60;
+            /* Change to a green color */
+            color: #fff;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #test-button:hover {
+            background-color: #354046;
+            /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        #uploaded-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        #uploaded-image:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header start -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+                <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
+            <div class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- 1st Section: Image Upload -->
+    <section id="image-upload-section">
+        <h2>1. Upload Image</h2>
+        <label for="image-input">Choose Image</label>
+        <input type="file" id="image-input" accept="image/*">
+    </section>
+
+    <!-- 2nd Section: Display Uploaded Image -->
+    <section id="display-image-section">
+        <h2>2. Uploaded Image</h2>
+        <img id="uploaded-image" alt="Uploaded Image will appear here">
+    </section>
+
+    <!-- 3rd Section: Test Button -->
+    <section id="test-button-section">
+        <h2>3. Test Button</h2>
+        <button id="test-button" onclick="startTesting()">Start Testing</button>
+    </section>
+
+
+    <!-- <script>
+        // Function to handle image upload
+        document.getElementById('image-input').addEventListener('change', function (event) {
+            const uploadedImage = document.getElementById('uploaded-image');
+            const file = event.target.files[0];
+
+            if (file) {
+                // Display the uploaded image
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Function to handle testing (placeholder function)
+        function startTesting() {
+            const uploadedImage = document.getElementById('uploaded-image');
+
+            // Check if the image is empty
+            if (uploadedImage.src === '' || uploadedImage.src === 'about:blank') {
+                alert('Please choose an image before testing.');
+            } else {
+                // Placeholder logic for testing (add your image processing logic here)
+                window.location.href = 'tryresult.html';
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>

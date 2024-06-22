@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-T Detection</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="styless2.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #66fcf1, #245755);
+            color: #fff;
+        }
+
+        .login-container {
+            text-align: center;
+            /* margin-top: 500px; */
+        }
+
+        .login-message {
+            display: none;
+            color: #007bff;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem 1rem;
+            z-index: 1000;
+        }
+
+        .header-active {
+            background: #fff;
+            box-shadow: 0 .1rem .3rem rgb(0, 0, 0, .3);
+            padding: 2rem 1rem;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header a {
+            color: var(--black);
+        }
+
+        header a:hover {
+            color: var(--blue);
+        }
+
+        header .container .logo {
+            font-size: 3rem;
+
+        }
+
+        header .container .logo span {
+            color: var(--blue);
+
+        }
+
+        header .nav ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        header .nav ul li {
+            margin: 0 1rem;
+        }
+
+        header .nav ul li a {
+            font-size: 2rem;
+        }
+
+        header .fa-bars {
+            font-size: 3.5rem;
+            color: var(--blue);
+            cursor: pointer;
+            display: none;
+        }
+
+        header .fa-times {
+            transform: rotate(180deg);
+        }
+
+
+
+
+        @media(max-width:768px) {
+            html {
+                font-size: 55%;
+            }
+
+            header .fa-bars {
+                display: block;
+            }
+
+            header .nav {
+                position: fixed;
+                top: -100rem;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 100vh rgb(0, 0, 0, .3);
+                border-radius: .5rem;
+                border: .3rem solid var(--blue) !important;
+                background: #fff;
+                width: 95%;
+                opacity: 0;
+            }
+
+            header .nav ul {
+                width: 100%;
+                flex-flow: column;
+                padding: 2rem 0;
+            }
+
+            header .nav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 1rem 0;
+            }
+
+            header .nav ul li a {
+                font-size: 3rem;
+                display: block;
+            }
+
+            header .nav-toggle {
+                top: 50%;
+                opacity: 1;
+            }
+
+        }
+    </style>
+
+    <title>Login Section</title>
+</head>
+
+<body>
+    <!-- header start -->
+    <header>
+        <div class="container">
+            <!-- <a href="#" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i> -->
+            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+                <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#login" onclick="login()">LOGIN</a></li>
+                </ul>
+            </nav>
+
+            <div class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <div id="login">
+    </div>
+
+    <div class="login-container">
+        <form id="login-form">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" href="#login" onclick="login()">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="reg.html" id="register-link">Register here</a></p>
+    </div>
+</body>
+
+</html>

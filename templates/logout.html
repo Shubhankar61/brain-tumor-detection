@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-T Detection</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #66fcf1, #245755);
+            color: #fff;
+        }
+
+        .logout-message {
+            /* display: none; */
+            text-align: center;
+            font-size: 14px;
+            /* margin-top: 100px; */
+            color: #007bff;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem 1rem;
+            z-index: 1000;
+        }
+
+        .header-active {
+            background: #32817b;
+            box-shadow: 0 .1rem .3rem rgb(0, 0, 0, .3);
+            padding: 2rem 1rem;
+
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header a {
+            color: var(--black);
+        }
+
+        header a:hover {
+            color: var(--blue);
+        }
+
+        header .container .logo {
+            font-size: 3rem;
+
+        }
+
+        header .container .logo span {
+            color: var(--blue);
+
+        }
+
+        header .nav ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        header .nav ul li {
+            margin: 0 1rem;
+        }
+
+        header .nav ul li a {
+            font-size: 2rem;
+        }
+
+        header .fa-bars {
+            font-size: 3.5rem;
+            color: var(--blue);
+            cursor: pointer;
+            display: none;
+        }
+
+        header .fa-times {
+            transform: rotate(180deg);
+        }
+
+
+
+
+        @media(max-width:768px) {
+            html {
+                font-size: 55%;
+            }
+
+            header .fa-bars {
+                display: block;
+            }
+
+            header .nav {
+                position: fixed;
+                top: -100rem;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 100vh rgb(0, 0, 0, .3);
+                border-radius: .5rem;
+                border: .3rem solid var(--blue) !important;
+                background: #fff;
+                width: 95%;
+                opacity: 0;
+            }
+
+            header .nav ul {
+                width: 100%;
+                flex-flow: column;
+                padding: 2rem 0;
+            }
+
+            header .nav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 1rem 0;
+            }
+
+            header .nav ul li a {
+                font-size: 3rem;
+                display: block;
+            }
+
+            header .nav-toggle {
+                top: 50%;
+                opacity: 1;
+            }
+
+        }
+    </style>
+
+    <script>
+        index = 9;
+        function updateCounter() {
+            document.getElementById('logout-counter').innerText = index.toString();
+            index--;
+        }
+
+        function logout() {
+            // Display the logout message
+            // document.getElementById('logout').innerHTML = "";
+            setTimeout(function () {
+                //alert('Logging out...'); // Optional alert message
+                window.location.href = 'login.html'; // Redirect to the login page
+            }, 10000);
+
+            setInterval(updateCounter, 1000);
+            // Set a timeout to logout after 10 seconds and redirect to the login page
+
+
+        }
+        logout();
+    </script>
+
+
+    <title>Logout Section</title>
+</head>
+
+<body>
+    <!-- header start -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+                <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="login.html">LOGOUT</a></li>
+                </ul>
+            </nav>
+
+            <div class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <section class="about" id="about">
+        <div class="row min-vh-100 align-items-center text-center text-md-center ">
+            <div class="col-md-6 content">
+                <h1 class="heading">" <span>Hope</span> "</h1>
+                <div class="box">
+                    <h3><span>Your Health, Our Priority</span></h3>
+                    <br>
+                    <p> Thank you for visiting! We hope our website has been valuable to you and your loved ones. If you require
+                        further assistance or have any inquiries related to our website, please feel free to reach out to our
+                        dedicated team of developers. Your satisfaction is our priority, and we look forward to assisting you in the
+                        future. Have a wonderful day!</p>
+                        <br>
+                        <h4> <span>Embracing Wellness</span></h4>
+                        <br>
+                        <p>In every challenge lies an opportunity for strength and growth. Remember, health is a journey, and we believe
+                            in your resilience and determination. Embrace each day with hope, as it is a step towards a brighter and
+                            healthier future.
+                
+                            Surround yourself with the love and support of your family, for together, you are an unbreakable force. As
+                            you navigate this journey, know that better health is not just a destination but a path that leads to
+                            vitality and well-being.
+                
+                            You and your family are in our thoughts. May each day bring you closer to a life filled with joy, good
+                            health, and renewed hope</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 content d-none d-md-block">
+                <a href="index.html">
+                <img class="img2" src="Hope_Rev_Medium.png" width="100%"></a>
+            </div>
+        </div>
+
+    </section>
+
+    
+    <div id="logout">
+        <p id="logoutMessage" class="logout-message">Logging out in <span id="logout-counter">10</span> seconds...</p>
+    </div>
+</body>
+
+</html>

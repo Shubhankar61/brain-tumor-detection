@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-T Detection</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #66fcf1, #245755);
+            color: #354046;
+        }
+
+        section {
+            width: 100%;
+            max-width: 600px;
+            background-color: linear-gradient(to right, #3498db, #6c5b7b);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform-origin: center;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        img:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        #result-description {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header start -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+                <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
+            <div class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- 1st Section: Original Uploaded Image -->
+    <section id="uploaded-image-section">
+        <h2>Original Uploaded Image</h2>
+        <img id="uploaded-image" alt="Uploaded Image from Test Page">
+    </section>
+
+    <!-- 2nd Section: Processed Image -->
+    <section id="processed-image-section">
+        <h2>Processed Image</h2>
+        <img id="processed-image" alt="Processed Image">
+    </section>
+
+    <!-- Result Description -->
+    <div id="result-description"></div>
+
+    <script>
+        // Get the uploaded image URL from localStorage
+        const uploadedImageSrc = localStorage.getItem('uploadedImageSrc');
+
+        // Get the processed image URL from localStorage
+        const processedImageSrc = localStorage.getItem('processedImageSrc');
+
+        // Get the result description from localStorage
+        const resultDescription = localStorage.getItem('resultDescription');
+
+        // Set the uploaded image source
+        document.getElementById('uploaded-image').src = uploadedImageSrc;
+
+        // Set the processed image source
+        document.getElementById('processed-image').src = processedImageSrc;
+
+        // Set the result description
+        document.getElementById('result-description').innerText = resultDescription;
+    </script>
+
+
+</body>
+
+</html>
