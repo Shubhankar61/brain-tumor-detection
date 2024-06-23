@@ -9,9 +9,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="styless2.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../static/css/style1.css">
+    <link rel="stylesheet" href="../static/css/styless2.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -161,13 +160,9 @@
     <header>
         <div class="container">
             <!-- <a href="#" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i> -->
-            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+            <a href="./" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
                 <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#login" onclick="login()">LOGIN</a></li>
-                </ul>
-            </nav>
+
 
             <div class="fas fa-bars"></div>
         </div>
@@ -189,8 +184,40 @@
             <button type="submit" href="#login" onclick="login()">Login</button>
         </form>
 
-        <p>Don't have an account? <a href="reg.html" id="register-link">Register here</a></p>
+        <!-- <p>Don't have an account? <a href="reg.html" id="register-link">Register here</a></p> -->
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById('login-form');
+        const registerLink = document.getElementById('register-link');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const usernameInput = document.getElementById('username');//.value;
+            const passwordInput = document.getElementById('password'); //.value;
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+            // Add your authentication logic here
+            if (username === 'admin' && password === '123') {
+                //alert('Login successful!');
+                // openNewWindow('index.html');
+                window.location.href = './home';
+                resetInputs(usernameInput, passwordInput);
+                // Redirect or perform other actions after successful login
+            } else {
+                alert('Invalid username or password. Please try again.');
+                // You can also update the UI to show an error message
+                resetInputs(usernameInput, passwordInput);
+            }
+        });
+    });
+    function resetInputs(...inputs) {
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+    }
+
+</script>
 
 </html>

@@ -9,7 +9,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="../static/css/style1.css">
 
     <style>
         body {
@@ -163,7 +163,7 @@
             // document.getElementById('logout').innerHTML = "";
             setTimeout(function () {
                 //alert('Logging out...'); // Optional alert message
-                window.location.href = 'login.html'; // Redirect to the login page
+                window.location.href = '/'; // Redirect to the login page
             }, 10000);
 
             setInterval(updateCounter, 1000);
@@ -182,11 +182,11 @@
     <!-- header start -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+            <a href="./home" class="logo"><i class="fa fa-stethoscope" aria-hidden="true"></i>
                 <span>B</span>.<span>T</span> <span>D</span>ETECTION</a>
             <nav class="nav">
                 <ul>
-                    <li><a href="login.html">LOGOUT</a></li>
+                    <li><a href="./">LOGOUT</a></li>
                 </ul>
             </nav>
 
@@ -223,8 +223,8 @@
             </div>
 
             <div class="col-md-6 content d-none d-md-block">
-                <a href="index.html">
-                <img class="img2" src="Hope_Rev_Medium.png" width="100%"></a>
+                <a href="./home">
+                <img class="img2" src="../static/img/Hope_Rev_Medium.png" width="100%"></a>
             </div>
         </div>
 
